@@ -1,0 +1,297 @@
+# Štít: AI ochrana pred podvodmi
+
+**Kompletný blueprint a backlog** (verzia 1.0, november 2026)
+
+---
+
+## STRANA 1: Produkt
+
+### 1.1 Vízia
+Každý človek so smartfónom si vie za 2 sekundy overiť, či správa, odkaz alebo telefonát nie je podvod. Seniorov navyše chráni ich rodina, aj keď nie je pri nich.
+
+### 1.2 Problém
+- Podvodné SMS, e-maily a správy na WhatsAppe chodia skoro každému, a to každý týždeň.
+- Najčastejšie typy na Slovensku:
+  - falošná pošta alebo kuriér („doplaťte clo 1,20 €“)
+  - falošná banka („váš účet bol zablokovaný“)
+  - „Ahoj mami, rozbil sa mi mobil, toto je moje nové číslo“
+  - falošné investície a kryptomeny s tvárami známych osobností
+  - podvody na bazároch („kupujúci“ posiela odkaz na falošnú platbu)
+  - falošný policajt alebo bankár, ktorý volá a tlačí na prevod peňazí
+- Ľudia stratia peniaze, hanbia sa a často to ani nenahlásia.
+- Seniori sú najzraniteľnejší. Ich deti sa o nich boja, ale nemôžu pri nich byť stále.
+
+### 1.3 Riešenie
+1. Používateľ pošle podozrivú vec do Štítu: text, odkaz alebo screenshot.
+2. AI ju vyhodnotí a vráti jasný verdikt.
+3. Používateľ hneď vie, čo robiť: zmazať, zablokovať, zavolať do banky.
+4. V rodinnom režime dostane upozornenie aj rodina.
+
+### 1.4 Cieľové skupiny
+| Skupina | Vek | Prečo zaplatí | Kto platí |
+|---|---|---|---|
+| **Rodiny (hlavná)** | 30 – 55 | Chcú chrániť rodičov a starých rodičov | Dospelé dieťa |
+| Seniori | 60+ | Strach a neistota | Najčastejšie rodina |
+| Aktívni ľudia | 18 – 45 | Predávajú na bazároch, nakupujú online | Sami |
+| Malé firmy | ľubovoľný | Falošné faktúry, podvodní „šéfovia“ v e-mailoch | Firma (neskôr) |
+
+### 1.5 Predajný sľub
+> **„Je to podvod? Opýtaj sa Štítu. Odpoveď máš za 2 sekundy.“**
+
+Doplnkové heslá do reklamy:
+- „Chráň mamu, aj keď nie si pri nej.“
+- „Za cenu kávy mesačne pokoj pre celú rodinu.“
+
+### 1.6 Konkurencia
+| Konkurent | Čo robí | Slabina | Naša výhoda |
+|---|---|---|---|
+| Antivírusy (ESET, Avast) | Chránia zariadenie | Zložité, drahé, nič nevysvetlia | Jednoduchosť a vysvetlenie |
+| Banky | Varovania v aplikácii | Iba ich vlastné podvody | Pokryjeme všetky typy |
+| Polícia a médiá | Články a varovania | Prídu neskoro, nie na mieru | Odpoveď hneď, pre konkrétnu správu |
+| Google a Apple | Filter spamu | Nič nevysvetlí, nevie nič o rodine | Rodinný režim a slovenčina |
+
+**Odlišovacie znaky:** slovenčina, miestne typy podvodov, ľudské vysvetlenie a rodinný režim.
+
+---
+
+## STRANA 2: Funkcie a obrazovky
+
+### 2.1 Mapa aplikácie
+```
+Úvodná stránka (pre neprihlásených)
+└── Aplikácia
+    ├── Skontrolovať (hlavná obrazovka)
+    │   └── Výsledok kontroly
+    ├── História
+    │   └── Detail kontroly
+    ├── Rodina
+    │   ├── Členovia a pozvánky
+    │   └── Upozornenia od členov
+    ├── Varovania (aktuálne podvody)
+    └── Profil
+        ├── Predplatné
+        ├── Notifikácie
+        └── Pomoc a kontakt
+Admin panel (iba pre teba)
+```
+
+### 2.2 Obrazovka „Skontrolovať“
+- Jedno veľké pole: „Vlož sem podozrivú správu alebo odkaz“
+- Tri tlačidlá: **Vložiť zo schránky**, **Nahrať screenshot**, **Skontrolovať**
+- Pod tým ukážky, napríklad „Takto vyzerá podvodná SMS od pošty“
+- Počítadlo pre bezplatný účet: „Zostávajú ti 3 z 5 kontrol“
+
+### 2.3 Obrazovka „Výsledok“
+| Prvok | Obsah |
+|---|---|
+| Verdikt | Veľká farebná karta: **PODVOD** (červená), **PODOZRIVÉ** (oranžová), **V PORIADKU** (zelená) |
+| Skóre rizika | 0 – 100 |
+| Typ podvodu | napríklad „Falošná pošta“ |
+| Prečo | 3 krátke dôvody („Odkaz nevedie na stránku pošty“, „Žiada platbu kartou“, „Tlačí na čas“) |
+| Čo spraviť | Kroky: „Neklikaj“, „Zmaž správu“, „Ak si zadal kartu, volaj banke na…“ |
+| Tlačidlá | **Upozorniť rodinu**, **Zdieľať varovanie**, **Verdikt je zlý** |
+
+### 2.4 Rodinný režim
+- **Strážca** (napríklad syn) vytvorí rodinu a pošle pozvánku cez odkaz alebo QR kód.
+- **Chránený člen** (napríklad mama) pozvánku prijme.
+- Keď mama skontroluje správu s verdiktom „Podvod“, synovi príde notifikácia: „Mama dostala podvodnú SMS (falošná pošta). Nič nezadala.“
+- Mama má na obrazovke veľké tlačidlo **Zavolať synovi**.
+- **Zjednodušený režim** pre seniorov: väčšie písmo, iba jedna obrazovka, žiadne menu.
+- Súkromie: strážca vidí iba verdikt a typ podvodu, nie celý text správy, pokiaľ to člen sám nepovolí.
+
+### 2.5 Varovania
+- Prehľad aktuálnych podvodov na Slovensku s príkladom, ukážkou a tým, ako ich spoznať.
+- Týždenná notifikácia „Podvod týždňa“.
+- Keď si viac ľudí naraz kontroluje rovnaký typ podvodu, appka ho automaticky označí ako „Práve letí“.
+
+### 2.6 Inštalácia a zdieľanie
+- Aplikácia sa inštaluje priamo z prehliadača na plochu mobilu, bez obchodu s aplikáciami.
+- **Android:** Štít sa objaví v ponuke „Zdieľať“, takže v SMS stačí podržať správu a vybrať Zdieľať a potom Štít.
+- **iPhone:** krátky návod, ako správu skopírovať a vložiť alebo poslať screenshot.
+- Neskôr vydanie v App Store a Google Play.
+
+---
+
+## STRANA 3: Backlog
+
+Priority: **P0** = nutné na spustenie, **P1** = krátko po spustení, **P2** = neskôr.
+
+### Epik 1: Landing page a značka
+| # | Používateľský príbeh | Priorita | Hotové, keď |
+|---|---|---|---|
+| 1.1 | Ako návštevník chcem za 5 sekúnd pochopiť, čo Štít robí | P0 | Hlavná sekcia so sľubom a tlačidlom „Vyskúšať zadarmo“ |
+| 1.2 | Ako návštevník chcem vidieť ukážku verdiktu | P0 | Animovaná ukážka podvodnej SMS a výsledku |
+| 1.3 | Ako rodič chcem vidieť, ako ochránim mamu | P0 | Sekcia „Rodinný režim“ |
+| 1.4 | Ako návštevník chcem poznať cenu | P0 | Cenník s 3 plánmi |
+| 1.5 | Ako návštevník chcem odpovede na otázky | P1 | Sekcia otázok a odpovedí (súkromie, ako to funguje, zrušenie) |
+| 1.6 | Ako návštevník si chcem skontrolovať jednu správu bez registrácie | P1 | 1 skúšobná kontrola bez účtu |
+
+### Epik 2: Kontrola správy
+| # | Používateľský príbeh | Priorita | Hotové, keď |
+|---|---|---|---|
+| 2.1 | Chcem vložiť text a dostať verdikt | P0 | Verdikt, skóre, typ, 3 dôvody, kroky |
+| 2.2 | Chcem skontrolovať samotný odkaz | P0 | Rozpozná falošné domény (napr. „posta-sk.top“) |
+| 2.3 | Chcem nahrať screenshot | P0 | AI prečíta text z obrázka |
+| 2.4 | Chcem vedieť, čo robiť, ak som už klikol | P0 | Samostatné kroky „Už som zadal údaje“ s kontaktmi na banky |
+| 2.5 | Chcem nahlásiť zlý verdikt | P1 | Tlačidlo, ktoré pošle hlásenie do admin panelu |
+| 2.6 | Chcem skontrolovať telefónne číslo | P1 | Kontrola podľa nahlásených čísel |
+| 2.7 | Chcem skontrolovať inzerát alebo e-shop | P2 | Vložím odkaz a dostanem hodnotenie dôveryhodnosti |
+
+### Epik 3: Účet a história
+| # | Používateľský príbeh | Priorita | Hotové, keď |
+|---|---|---|---|
+| 3.1 | Chcem sa prihlásiť cez Google, Apple alebo e-mail | P0 | Funkčné prihlásenie |
+| 3.2 | Chcem vidieť históriu kontrol | P0 | Zoznam s verdiktom a dátumom |
+| 3.3 | Chcem otvoriť starú kontrolu | P0 | Detail kontroly |
+| 3.4 | Chcem zmazať históriu alebo celý účet | P0 | Zmaže sa natrvalo (vyžaduje GDPR) |
+| 3.5 | Ako bezplatný používateľ vidím limit 5 kontrol mesačne | P0 | Počítadlo a výzva na Plus |
+
+### Epik 4: Inštalácia a zdieľanie
+| # | Používateľský príbeh | Priorita | Hotové, keď |
+|---|---|---|---|
+| 4.1 | Chcem si Štít nainštalovať na plochu | P0 | Tlačidlo „Nainštalovať“ a ikona na ploche |
+| 4.2 | Ako používateľ Androidu chcem zdieľať SMS priamo do Štítu | P0 | Štít je v ponuke Zdieľať |
+| 4.3 | Ako používateľ iPhonu chcem jednoduchý návod | P0 | Návod v 3 krokoch s obrázkami |
+| 4.4 | Chcem notifikácie | P1 | Povolenie notifikácií s vysvetlením, na čo slúžia |
+
+### Epik 5: Rodinný režim
+| # | Používateľský príbeh | Priorita | Hotové, keď |
+|---|---|---|---|
+| 5.1 | Ako strážca chcem vytvoriť rodinu | P0 | Rodina s názvom |
+| 5.2 | Ako strážca chcem pozvať mamu | P0 | Odkaz a QR kód |
+| 5.3 | Ako strážca chcem dostať upozornenie na podvod | P0 | Notifikácia s verdiktom a typom |
+| 5.4 | Ako senior chcem jedným tlačidlom zavolať strážcovi | P0 | Veľké tlačidlo s telefónnym číslom |
+| 5.5 | Ako senior chcem jednoduchú obrazovku | P1 | Zjednodušený režim |
+| 5.6 | Ako člen chcem rozhodnúť, čo uvidí strážca | P1 | Nastavenie súkromia |
+| 5.7 | Ako strážca chcem mesačný prehľad rodiny | P2 | „Tento mesiac 4 zastavené podvody“ |
+
+### Epik 6: Predplatné
+| # | Používateľský príbeh | Priorita | Hotové, keď |
+|---|---|---|---|
+| 6.1 | Chcem si kúpiť Plus alebo Rodinu | P0 | Platba kartou, Apple Pay a Google Pay |
+| 6.2 | Chcem 7 dní vyskúšať zadarmo | P0 | Skúšobná verzia s pripomienkou pred koncom |
+| 6.3 | Chcem ročné predplatné so zľavou | P1 | Ročná platba = 2 mesiace zadarmo |
+| 6.4 | Chcem predplatné jednoducho zrušiť | P0 | Zrušenie na 2 kliky |
+| 6.5 | Chcem darovať Štít mame | P2 | Darčekový kód |
+
+### Epik 7: Varovania a týždenný prehľad
+| # | Používateľský príbeh | Priorita | Hotové, keď |
+|---|---|---|---|
+| 7.1 | Chcem vidieť aktuálne podvody | P1 | Prehľad varovaní |
+| 7.2 | Chcem raz týždenne dostať „Podvod týždňa“ | P1 | Notifikácia |
+| 7.3 | Chcem vidieť, čo práve letí | P2 | Automatické označenie podľa počtu kontrol |
+
+### Epik 8: Admin panel
+| # | Používateľský príbeh | Priorita | Hotové, keď |
+|---|---|---|---|
+| 8.1 | Ako majiteľ chcem vidieť štatistiky | P1 | Používatelia, kontroly, platiaci, príjem |
+| 8.2 | Ako majiteľ chcem písať varovania | P1 | Vytváranie a úprava varovaní |
+| 8.3 | Ako majiteľ chcem riešiť nahlásené zlé verdikty | P1 | Zoznam hlásení a stav vybavené |
+| 8.4 | Ako majiteľ chcem spravovať zoznam podvodných domén a čísel | P2 | Pridanie a odobranie z čierneho zoznamu |
+
+---
+
+## STRANA 4: Ako to funguje a ako to zarába
+
+### 4.1 Ako sa vyhodnocuje správa
+1. **Rýchla kontrola:** porovnanie s čiernym zoznamom známych podvodných domén a čísel.
+2. **Kontrola odkazu:** je doména nová, napodobňuje známu značku (napr. „slovenskaposta-sk.com“) alebo používa skracovač?
+3. **AI analýza:** model posúdi text podľa znakov podvodu, teda nátlaku na čas, žiadosti o peniaze či údaje, neobvyklého odosielateľa a pravopisu.
+4. **Kalibrované skóre:** AI vráti pravdepodobnosť, že ide o podvod. Z nej sa určí verdikt:
+   - 70 – 100 = Podvod
+   - 35 – 69 = Podozrivé
+   - 0 – 34 = V poriadku
+5. **Vysvetlenie:** AI napíše 3 dôvody a kroky jednoduchou slovenčinou.
+
+Celé to beží cez Hercules AI Gateway, takže nepotrebuješ vlastné kľúče k AI.
+
+### 4.2 Dáta, ktoré si aplikácia ukladá
+| Dáta | Obsah |
+|---|---|
+| Používatelia | meno, e-mail, plán, zjednodušený režim áno/nie |
+| Kontroly | používateľ, text (voliteľne), verdikt, skóre, typ, dátum |
+| Rodiny | názov, strážca |
+| Členovia rodiny | rodina, používateľ, rola (strážca/chránený), nastavenia súkromia |
+| Upozornenia | komu, od koho, kontrola, prečítané |
+| Varovania | nadpis, popis, ukážka, typ, dátum |
+| Hlásenia zlých verdiktov | kontrola, komentár, stav |
+| Čierny zoznam | doména alebo číslo, typ, zdroj |
+| Mesačné počítadlá | koľko kontrol spravil používateľ v danom mesiaci |
+
+### 4.3 Bezpečnosť a súkromie (GDPR)
+- Používateľ si vyberie, či sa má text správy uložiť. Predvolene sa uloží iba verdikt a typ.
+- Osobné údaje v správe (čísla kariet, rodné čísla) sa pred uložením skryjú.
+- Účet aj históriu ide kedykoľvek zmazať natrvalo.
+- Žiadna reklama a žiadny predaj dát. To je hlavný predajný argument.
+- Pred spustením treba zásady ochrany osobných údajov a obchodné podmienky (odporúčam konzultáciu s právnikom).
+- Upozornenie v aplikácii: „Štít je pomocník, nie záruka. Pri pochybnostiach volaj banku.“
+
+### 4.4 Cenník
+| Plán | Cena | Čo obsahuje |
+|---|---|---|
+| **Zadarmo** | 0 € | 5 kontrol mesačne, varovania |
+| **Plus** | 2,99 € mesačne / 29,90 € ročne | neobmedzené kontroly, screenshoty, história, notifikácie |
+| **Rodina** | 4,99 € mesačne / 49,90 € ročne | všetko z Plus pre 5 členov a rodinný režim |
+
+### 4.5 Ekonomika (orientačne)
+| Položka | Odhad |
+|---|---|
+| Náklady na AI za 1 kontrolu | rádovo zlomky centa |
+| Priemerný platiaci (mix Plus a Rodina) | ~3,80 € mesačne |
+| Poplatky za platby | ~3 – 5 % |
+| Náklady na AI a prevádzku na 1 platiaceho | výrazne pod 0,50 € mesačne |
+| **Hrubá marža** | **~85 %** |
+
+**Príklad:** 1 000 platiacich × 3,80 € = **3 800 € mesačne**, teda ~45 600 € ročne.
+**Cieľ na 1. rok:** 2 000 – 5 000 platiacich (SK + CZ).
+
+Čísla sú orientačné a treba ich overiť na reálnych dátach po spustení.
+
+---
+
+## STRANA 5: Spustenie, metriky, roadmapa, riziká
+
+### 5.1 Ako získať používateľov
+| Kanál | Taktika |
+|---|---|
+| **TikTok a Instagram** | Krátke videá „Je toto podvod? Pozri, čo povedal Štít“ podľa reálnych podvodov |
+| **Facebook** | Reklama na ľudí 35 – 55 rokov: „Chráň mamu pred podvodníkmi“ |
+| **Odporúčania** | Pozvi kamaráta a obaja dostanete mesiac Plus zadarmo |
+| **Médiá** | Tlačové správy pri každej novej vlne podvodov („Štít zachytil 2 000 falošných SMS od pošty“) |
+| **Partnerstvá** | Kluby dôchodcov, obce, knižnice, neskôr banky a mobilní operátori |
+| **Darček** | Kampaň pred Vianocami a Dňom matiek: „Daruj mame pokoj“ |
+
+### 5.2 Kľúčové metriky
+| Metrika | Cieľ |
+|---|---|
+| Návštevník → registrácia | 10 % |
+| Registrácia → prvá kontrola | 70 % |
+| Bezplatný → platiaci | 5 – 8 % |
+| Mesačný odchod platiacich | pod 5 % |
+| Podiel plánu Rodina | nad 40 % |
+| Presnosť verdiktov (podľa hlásení) | nad 95 % |
+| Čas do verdiktu | pod 3 sekundy |
+
+### 5.3 Roadmapa
+| Fáza | Obsah | Výsledok |
+|---|---|---|
+| **Fáza 1: MVP** | Landing page, kontrola správy, účet, inštalácia | Prví testeri z okolia |
+| **Fáza 2: Spustenie** | Rodinný režim, predplatné | Prví platiaci |
+| **Fáza 3: Rast** | Varovania, týždenný prehľad, admin panel, odporúčania | Pravidelný obsah a rast |
+| **Fáza 4: Expanzia** | Čeština, App Store a Google Play, kontrola čísel a e-shopov | Trh CZ |
+| **Fáza 5: Firmy** | Plán pre malé firmy, partnerstvá s bankami | Väčší príjem |
+
+### 5.4 Riziká a ako ich riešiť
+| Riziko | Dopad | Riešenie |
+|---|---|---|
+| AI označí podvod ako „v poriadku“ | Vysoký | Pri neistote verdikt „Podozrivé“, upozornenie „nie je to záruka“, učenie sa z hlásení |
+| iPhone nepustí aplikáciu do ponuky Zdieľať | Stredný | Kopírovať a vložiť, screenshot, neskôr natívna aplikácia |
+| Seniori to nezvládnu nastaviť | Stredný | Nastavenie urobí strážca, zjednodušený režim, návod na papier |
+| Konkurencia od veľkých firiem | Stredný | Slovenčina, rodina, miestne podvody, rýchlosť |
+| GDPR a citlivé dáta | Vysoký | Predvolene neukladať text, skrývanie údajov, právnik |
+| Nízky záujem platiť | Stredný | Silný bezplatný plán, plán Rodina ako darček, ročné zľavy |
+
+### 5.5 Ďalší krok
+Plán je pripravený v 8 krokoch, od landing page po admin panel. Začal by som **landing page a značkou**, potom **kontrolou správy**. Po tých dvoch krokoch už budeš mať funkčný produkt, ktorý môžeš ukázať prvým ľuďom.
+
+**Mám začať stavať?**
